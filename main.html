@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SandCatGo - Premium Test Suite Generator</title>
+    <title>SandCatGo - Platinum Test Suite Generator</title>
 
     <!-- html2canvas for PNG Export -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <style>
         :root {
-            --primary-silver: #E8E8E8;
-            --secondary-silver: #C0C0C0;
-            --dark-silver: #A0A0A0;
-            --premium-black: #1A1A1A;
-            --accent-gold: #D4AF37;
-            --accent-dark-gold: #B8860B;
-            --card-bg: rgba(30, 30, 30, 0.85);
-            --input-bg: rgba(40, 40, 40, 0.9);
+            --platinum-primary: #E5E4E2;
+            --platinum-secondary: #D4D4D4;
+            --platinum-dark: #B0B0B0;
+            --platinum-accent: #C0C0C0;
+            --platinum-accent-dark: #A0A0A0;
+            --platinum-black: #1A1A1A;
+            --platinum-glow: rgba(229, 228, 226, 0.4);
+            --card-bg: rgba(30, 30, 30, 0.9);
+            --input-bg: rgba(40, 40, 40, 0.95);
         }
         
         * {
@@ -29,12 +30,12 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: 
-                linear-gradient(rgba(10, 10, 10, 0.85), rgba(20, 20, 20, 0.9)),
+                linear-gradient(rgba(15, 15, 15, 0.9), rgba(25, 25, 25, 0.95)),
                 url('r99e_l0hq_210426.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            color: var(--primary-silver);
+            color: var(--platinum-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -58,19 +59,23 @@
         .sandcat-logo {
             height: 80px;
             width: auto;
-            filter: brightness(0) invert(1);
+            filter: drop-shadow(0 0 8px var(--platinum-glow));
         }
 
         .header-text h1 {
-            color: var(--primary-silver);
+            color: var(--platinum-primary);
             font-size: 2.8rem;
             margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            text-shadow: 0 0 15px var(--platinum-glow);
             letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--platinum-primary), var(--platinum-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header-text h2 {
-            color: var(--secondary-silver);
+            color: var(--platinum-secondary);
             font-size: 1.2rem;
             font-weight: normal;
             letter-spacing: 0.5px;
@@ -78,7 +83,7 @@
 
         .tagline {
             font-style: italic;
-            color: var(--dark-silver);
+            color: var(--platinum-dark);
             margin-top: 10px;
             font-size: 1rem;
         }
@@ -97,7 +102,7 @@
             background: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(229, 228, 226, 0.3);
             padding: 30px;
             flex: 1;
             min-width: 300px;
@@ -112,7 +117,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            background: linear-gradient(90deg, transparent, var(--platinum-primary), transparent);
         }
 
         .input-card {
@@ -124,12 +129,12 @@
             padding: 20px;
             border-radius: 10px;
             background: var(--input-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(229, 228, 226, 0.2);
             text-align: center;
             font-family: 'Courier New', monospace;
             font-size: 24px;
             margin-bottom: 25px;
-            color: var(--primary-silver);
+            color: var(--platinum-primary);
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
@@ -142,7 +147,7 @@
             font-weight: 600;
             display: block;
             margin-bottom: 10px;
-            color: var(--secondary-silver);
+            color: var(--platinum-secondary);
             font-size: 1rem;
             letter-spacing: 0.5px;
         }
@@ -150,26 +155,26 @@
         input {
             width: 100%;
             padding: 14px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(229, 228, 226, 0.3);
             border-radius: 8px;
             font-size: 16px;
             text-align: center;
             background: var(--input-bg);
-            color: var(--primary-silver);
+            color: var(--platinum-primary);
             transition: all 0.3s ease;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         input:focus {
             outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+            border-color: var(--platinum-primary);
+            box-shadow: 0 0 8px var(--platinum-glow);
         }
 
         .generate-btn {
             padding: 16px;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-dark-gold));
-            color: var(--premium-black);
+            background: linear-gradient(135deg, var(--platinum-primary), var(--platinum-dark));
+            color: var(--platinum-black);
             border: none;
             border-radius: 8px;
             font-size: 18px;
@@ -178,12 +183,12 @@
             transition: all 0.3s ease;
             margin-top: 10px;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 15px rgba(229, 228, 226, 0.3);
         }
 
         .generate-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 20px rgba(229, 228, 226, 0.4);
         }
 
         .result-card {
@@ -197,20 +202,20 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(229, 228, 226, 0.2);
         }
 
         .result-header h3 {
-            color: var(--primary-silver);
+            color: var(--platinum-primary);
             font-size: 1.4rem;
         }
 
         .test-count {
-            background: rgba(212, 175, 55, 0.2);
+            background: rgba(229, 228, 226, 0.2);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
-            color: var(--accent-gold);
+            color: var(--platinum-primary);
         }
 
         .result-container {
@@ -218,14 +223,29 @@
             padding: 20px;
             border-radius: 10px;
             background: var(--input-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(229, 228, 226, 0.2);
             overflow-y: auto;
             max-height: 350px;
             font-family: 'Consolas', 'Monaco', monospace;
             white-space: pre-wrap;
-            color: var(--primary-silver);
+            color: var(--platinum-primary);
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
             line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 200px;
+        }
+
+        .awaiting-config {
+            color: var(--platinum-dark);
+            font-size: 1.1rem;
+            opacity: 0.8;
+            font-style: italic;
+            padding: 40px 20px;
+            text-align: center;
+            width: 100%;
         }
 
         .export-controls {
@@ -237,8 +257,8 @@
         .export-btn {
             flex: 1;
             padding: 12px;
-            background: linear-gradient(135deg, var(--secondary-silver), var(--dark-silver));
-            color: var(--premium-black);
+            background: linear-gradient(135deg, var(--platinum-secondary), var(--platinum-dark));
+            color: var(--platinum-black);
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -255,7 +275,7 @@
         .footer {
             margin-top: 50px;
             text-align: center;
-            color: var(--secondary-silver);
+            color: var(--platinum-secondary);
             position: relative;
         }
 
@@ -267,7 +287,7 @@
             transform: translateX(-50%);
             width: 200px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            background: linear-gradient(90deg, transparent, var(--platinum-primary), transparent);
         }
 
         .footer-logos {
@@ -282,26 +302,26 @@
             height: 60px;
             width: auto;
             object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 0 5px rgba(229, 228, 226, 0.3));
         }
 
         .footer-logo:hover {
-            opacity: 1;
+            transform: translateY(-3px);
+            filter: drop-shadow(0 0 10px rgba(229, 228, 226, 0.5));
         }
 
         .copyright {
             margin-top: 15px;
             font-size: 14px;
-            color: var(--dark-silver);
+            color: var(--platinum-dark);
         }
 
         .developers {
             margin-top: 20px;
             font-size: 14px;
             line-height: 1.6;
-            color: var(--secondary-silver);
+            color: var(--platinum-secondary);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -321,7 +341,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: var(--accent-gold);
+            background: var(--platinum-primary);
             border-radius: 50%;
             opacity: 0.3;
             animation: float 15s infinite linear;
@@ -360,6 +380,11 @@
             .export-controls {
                 flex-direction: column;
             }
+            
+            .footer-logos {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -373,8 +398,8 @@
             <img src="ec2e0992-64c8-4940-90fe-1a89ec77c7fe.png" class="sandcat-logo" alt="Sand Cat Logo">
             <div class="header-text">
                 <h1>SandCatGo</h1>
-                <h2>Premium Test Suite Generator</h2>
-                <div class="tagline">Advanced optimization with premium performance</div>
+                <h2>Platinum Test Suite Generator</h2>
+                <div class="tagline">Advanced optimization with premium platinum performance</div>
             </div>
         </div>
     </div>
@@ -409,7 +434,7 @@
                 <div class="test-count" id="testCount">0 test cases</div>
             </div>
             <div class="result-container" id="result">
-                Awaiting input configuration...
+                <div class="awaiting-config">Awaiting input configuration...</div>
             </div>
             <div class="export-controls">
                 <button id="printBtn" class="export-btn" style="display:none;" onclick="savePNG()">Save as PNG</button>
@@ -480,13 +505,16 @@
             let params = `?strength=${strength}&numInputs=${numInputs}&paramValue=${paramValue}`;
 
             // Show loading state
-            document.getElementById("result").innerText = "Generating test suite...";
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = '<div class="awaiting-config">Generating test suite...</div>';
             
             try {
                 const response = await fetch(baseUrl + params);
                 const result = await response.text();
 
-                document.getElementById("result").innerText = result;
+                // Remove the awaiting-config div and set the result
+                resultDiv.innerHTML = '';
+                resultDiv.textContent = result;
                 
                 // Update test case count
                 let count = result.split("\n").filter(line => /^\d+\)/.test(line)).length;
@@ -495,7 +523,8 @@
                 document.getElementById("printBtn").style.display = "block";
                 document.getElementById("downloadBtn").style.display = "block";
             } catch (error) {
-                document.getElementById("result").innerText = "Error: Unable to generate test suite. Please try again.";
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = '<div class="awaiting-config">Error: Unable to generate test suite. Please try again.</div>';
                 console.error(error);
             }
         }
@@ -509,7 +538,7 @@
             const imgData = canvas.toDataURL("image/png");
             const link = document.createElement("a");
             link.href = imgData;
-            link.download = "SandCatGo_Premium_TestSuite.png";
+            link.download = "SandCatGo_Platinum_TestSuite.png";
             link.click();
         }
 
@@ -527,7 +556,7 @@
 
             let count = cleaned.split("\n").filter(line => /^\d+\)/.test(line)).length;
 
-            let header = `SandCatGo Premium Test Suite\nConfiguration: t(strength)-${strength}, ${numInputs}^${paramValue}\n\n`;
+            let header = `SandCatGo Platinum Test Suite\nConfiguration: t(strength)-${strength}, ${numInputs}^${paramValue}\n\n`;
             let footer = `\n\nCompleted with ${count} test cases.`;
 
             let finalText = header + cleaned + footer;
@@ -535,7 +564,7 @@
             let blob = new Blob([finalText], { type: "text/plain" });
             let link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
-            link.download = "SandCatGo_Premium_test_suite.txt";
+            link.download = "SandCatGo_Platinum_test_suite.txt";
             link.click();
         }
 
